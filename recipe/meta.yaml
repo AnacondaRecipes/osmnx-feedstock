@@ -17,23 +17,22 @@ build:
 
 requirements:
   host:
-    - hatch
+    - hatchling
     - pip
     - python
   run:
-    - folium
-    - gdal
-    - geopandas
-    - matplotlib-base
-    - networkx
-    - numpy
-    - pandas
-    - python >=3.8
-    - rasterio
-    - requests
-    - scipy
-    - scikit-learn
+    - geopandas >=0.12
+    - networkx >=2.5
+    - numpy >=1.20
+    - pandas >=1.1
+    - python
+    - requests >=2.27
     - shapely >=2.0
+  run_constrained:
+    - scipy >=1.5
+    - scikit-learn >=0.23
+    - matplotlib-base >=3.5
+    - rasterio
 
 test:
   imports:
