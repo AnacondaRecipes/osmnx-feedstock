@@ -37,6 +37,10 @@ requirements:
 test:
   imports:
     - osmnx
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://osmnx.readthedocs.io
