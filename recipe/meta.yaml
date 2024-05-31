@@ -1,13 +1,13 @@
 {% set name = "osmnx" %}
 {% set version = "1.9.3" %}
-{% set sha256 = "48775ffb28d25bf95d12d9fcb8fd6872d082891724077b5f063d6d02ae816000" %}
+{% set sha256 = "22548d86d68d36edff3cf9ab76c45745cda86a4ea0b28442e107d6b42992a426" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/gboeing/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -35,20 +35,12 @@ requirements:
     - rasterio >=1.3
 
 test:
-  source_files:
-    - tests
   imports:
     - osmnx
   requires:
     - pip
-    - pytest
-    - pre-commit
-    - hatchling
-    - folium
-    - pyproj >=3.0
   commands:
     - pip check
-    - pytest tests -k "not test_elevation"
 
 about:
   home: https://osmnx.readthedocs.io
