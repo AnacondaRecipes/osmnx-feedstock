@@ -45,6 +45,7 @@ test:
     - pre-commit
     - hatchling
     - folium
+    - pyproj >=3.0
   commands:
     - pip check
     - pytest tests -k "not test_elevation"
